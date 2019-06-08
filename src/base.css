@@ -1,0 +1,170 @@
+/**
+这里放一些常用样式
+**/
+.clear:after{
+	content:"";
+	height:0;
+	line-height:0;
+	display:block;
+	visibility:hidden;
+	clear:both
+}
+.el{
+	overflow: hidden;
+    text-overflow: ellipsis;
+    white-space:nowrap;
+}
+.elDb{
+	overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient:vertical;
+    -webkit-line-clamp:2;
+}
+.opt70{
+	filter:alpha(opacity=70);   
+    -moz-opacity:0.7;   
+    -khtml-opacity: 0.7;   
+    opacity: 0.7;  
+}
+.opt50{
+	filter:alpha(opacity=50);   
+    -moz-opacity:0.5;   
+    -khtml-opacity: 0.5;   
+    opacity: 0.5;  
+}
+/**三角实心**/
+.trg-solid_up{
+    width:0;
+    height:0;
+    border-width:0 20px 20px;
+    border-style:solid;
+    border-color:transparent transparent #333;/*透明 透明  灰*/
+}
+.trg-solid_down{
+    width:0;
+    height:0;
+    border-width:20px 20px 0;
+    border-style:solid;
+    border-color:#333 transparent transparent;/*灰 透明 透明 */
+}
+.trg-solid_left{
+    width:0;
+    height:0;
+    border-width:20px 20px 20px 0;
+    border-style:solid;
+    border-color:transparent #333 transparent transparent;/*透明 灰 透明 透明 */
+}
+.trg-solid_right{
+    width:0;
+    height:0;
+    border-width:20px 0 20px 20px;
+    border-style:solid;
+    border-color:transparent transparent transparent #333;/*透明 透明 透明 灰*/
+}
+/**三角空心**/
+/**空心三角基础**/
+.trg-hollow::before{
+    display: inline-block;
+    content: '';
+    width: 10px;
+    height: 10px;
+    border: 1px solid #ccc;
+    border-bottom: 0;
+    border-right: 0;
+}
+.trg-hollow_up::before{
+    transform: rotate(45deg);
+}
+.trg-hollow_down::before{
+    transform: rotate(225deg);
+}
+.trg-hollow_left::before{
+    transform: rotate(-45deg);
+}
+.trg-hollow_right::before{
+    transform: rotate(135deg);
+}
+/**伪类实现switch**/
+.switch {
+    position: relative;
+    width: 60px;
+    height: 30px;
+    background-color: #dadada;
+    border-radius: 30px;
+    border: none;
+    outline: none;
+    -webkit-appearance: none;
+    transition: all .2s ease;
+    cursor:pointer;
+}
+.switch::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background-color: #fff;
+    border-radius: 50%;
+    transition: all .2s ease;
+}
+   
+.switch:checked {
+    background-color: #86c0fa;
+}
+.switch:checked::after {
+    left: 50%;
+}
+/**浏览器宽度10%的正方形**/
+.square{
+    width:10%;
+    height:10vw;
+    background:red;
+}
+/**居中**/
+.horizontal{
+    position: absolute;
+    left:0;
+    right:0;
+    margin:0 auto;
+    width:10%;
+    height:5vw;
+    background:green;
+}
+.vertical{
+    position: absolute;
+    top:0;
+    bottom:0;
+    margin:auto 0;
+    width:10%;
+    height:5vw;
+    background:blue;
+}
+/**左右结构右边自适应,左中右同理**/
+.adpptRig-web{
+    margin-left:100px;
+
+}
+/**配合flex,左中右同左右**/
+.adapt{
+    display:flex;
+    display:-webkit-flex;
+}
+.adpptRig-h5{
+    flex-grow:1;
+    -webkit-flex-grow:1;
+}
+/**手风琴**/
+.imgCom{
+   float:left;
+   transition: all 1s;
+   cursor: pointer;
+   width:20%;
+}
+
+.img:hover .imgCom{
+    width:10%;
+}
+.img .imgCom:hover{
+    width:60%;
+}
